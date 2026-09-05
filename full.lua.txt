@@ -1656,7 +1656,7 @@ do
     		container.BorderColor3 = Color3.fromRGB(0, 0, 0)
     		container.AnchorPoint = Vector2.new(0, 0)
     		container.Position = UDim2.new(0.5, -500 / 2, 0.5, -400 / 2)
-    		container.Size = UDim2.new(0, 350, 0, 400)
+    		container.Size = UDim2.new(0, 500, 0, 350)
     		container.Parent = screenGui
     		self.instances.container = container
 

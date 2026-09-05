@@ -1800,7 +1800,7 @@ do
     				local delta= mousePosition - uiPosition
 
 
-    				local newSize = UDim2.new(0, math.max(500, delta.X), 0, math.max(400, delta.Y))
+    				local newSize = UDim2.new(0, math.max(500, delta.X), 0, math.max(350, delta.Y))
     				self.instances.container.Size = newSize
 
     				local function recursiveResize(parent)

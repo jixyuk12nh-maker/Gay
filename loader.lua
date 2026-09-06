@@ -3631,11 +3631,42 @@ do
                 main:newToggle("skins/main/unlock_all"):setLabel("Unlock All")
                 main:newLabel("skins/main/label_info"):setLabel("When unlock all is enabled you can pick any")
                 main:newLabel("skins/main/label_info2"):setLabel("skin in lobby and we will apply it in game")
-    
+
                 if not getconnections or not islclosure or not getconstants or not setconstant then
                     main:newLabel("skins/main/label_info3"):setLabel("NOT SUPPORTED ON YOUR EXECUTOR!")
                 end
+
+                main:newDropdown("skins/main/skin", false, {
+                    "Skin 1",
+                    "Skin 2",
+                    "Skin 3"
+                })
+
+                main:newDropdown("skins/main/wrap", false, {
+                    "Wrap 1",
+                    "Wrap 2",
+                    "Wrap 3"
+                })
+
+                main:newDropdown("skins/main/charm", false, {
+                    "Charm 1",
+                    "Charm 2",
+                    "Charm 3"
+                })
+
+                main:newDropdown("skins/main/finisher", false, {
+                    "Finisher 1",
+                    "Finisher 2",
+                    "Finisher 3"
+                })
             end
+         end
+
+         local settings = tabList:newTab("Settings"):intoSections()
+         do
+           local menu = settings:newSection("left", "Menu")
+           menu:newLabel("Keybind"):setLabel("Keybind")
+        :newKeybind("settings/menu_keybind")
         end
     
         local settings= tabList:newTab("Settings"):intoSections()

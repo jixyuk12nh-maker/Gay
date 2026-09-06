@@ -3613,27 +3613,41 @@ do
                 -- movement:newToggle("misc/movement/jump_height/enabled")
             end
     
-            local guns = misc:newSection("right", "Guns")
+            local skins = tabList:newTab("Skins"):intoSections()
             do
-                guns:newToggle("misc/guns/no_recoil"):setLabel("No Recoil")
-                guns:newToggle("misc/guns/no_spread"):setLabel("No Spread")
-                guns:newToggle("misc/guns/no_shoot_cooldown"):setLabel("No Shoot Cooldown")
-    
-                guns:newToggle("misc/guns/aim_fov_mult/enabled"):setLabel("Enable Aim FOV Multiplier")
-                guns:newSlider("misc/guns/aim_fov_mult/mult", 0, 3, 100):set(0):setLabel("Aim FOV Multiplier")
-            end
-        end
-    
-        local skins = tabList:newTab("Skins"):intoSections()
-        do
-            local main = skins:newSection("left", "Main")
-            do
-                main:newToggle("skins/main/unlock_all"):setLabel("Unlock All")
-                main:newLabel("skins/main/label_info"):setLabel("When unlock all is enabled you can pick any")
-                main:newLabel("skins/main/label_info2"):setLabel("skin in lobby and we will apply it in game")
-    
-                if not getconnections or not islclosure or not getconstants or not setconstant then
-                    main:newLabel("skins/main/label_info3"):setLabel("NOT SUPPORTED ON YOUR EXECUTOR!")
+                local main = skins:newSection("left", "Main")
+                do
+                    main:newToggle("skins/main/unlock_all"):setLabel("Unlock All")
+                    main:newLabel("skins/main/label_info"):setLabel("When unlock all is enabled you can pick any")
+                    main:newLabel("skins/main/label_info2"):setLabel("skin in lobby and we will apply it in game")
+
+                    if not getconnections or not islclosure or not getconstants or not setconstant then
+                        main:newLabel("skins/main/label_info3"):setLabel("NOT SUPPORTED ON YOUR EXECUTOR!")
+                    end
+
+                    main:newDropdown("skins/main/skin", false, {
+                        "Skin 1",
+                        "Skin 2",
+                        "Skin 3"
+                    })
+
+                    main:newDropdown("skins/main/wrap", false, {
+                        "Wrap 1",
+                        "Wrap 2",
+                        "Wrap 3"
+                    })
+                    
+                    main:newDropdown("skins/main/charm", false, {
+                        "Charm 1",
+                        "Charm 2",
+                        "Charm 3"
+                    })
+
+                    main:newDropdown("skins/main/finisher", false, {
+                        "Finisher 1",
+                        "Finisher 2",
+                        "Finisher 3"
+                    })
                 end
             end
         end

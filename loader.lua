@@ -3539,7 +3539,7 @@ end
 
 -- Example
 do
-    local base = UIBase.new():setLabel("hi") do
+    local base = UIBase.new():setLabel("Minho Hub|V1") do
         local tabList= base:newTabList()
     
         local main= tabList:newTab("Combat"):intoSections() do
